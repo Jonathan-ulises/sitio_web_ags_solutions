@@ -1,0 +1,21 @@
+.estilo-menu {
+    text-transform: uppercase;
+  }
+  
+/* Estilo para el botón */
+.boton-negro {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 10px 20px; /* Ajusta el padding según sea necesario */
+    border: none;
+    border-radius: 5px; /* Ajusta el radio de borde según sea necesario */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Efecto de transición en el color de fondo */
+  }
+  
+  /* Estilo cuando el mouse pasa sobre el botón */
+  .boton-negro:hover {
+    background-color: #333; /* Puedes ajustar este color según tus preferencias */
+  }
+  
