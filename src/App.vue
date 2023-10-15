@@ -364,7 +364,7 @@ export default {
           this.sub_menu_soy_estudiante = false;
         }else{
           this.sub_menu_soy_estudiante = true;
-
+          
         }
       }
 
