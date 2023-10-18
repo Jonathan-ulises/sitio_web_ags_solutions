@@ -10,7 +10,7 @@
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="@/assets/Logo_UTL.png" 
           transition="scale-transition"
           width="40"
         />
@@ -34,15 +34,6 @@
 
       <v-spacer></v-spacer>
 
-      <!-- Botón de Menu -->
-      <v-btn text class="black--text"  @click="openDialogMenu">
-        
-
-        <v-icon>mdi-menu</v-icon>
-        Menu 
-
-      </v-btn>
-
       <!-- Botón de Soy Estudiante -->
       <v-btn text class="black--text" @click="openDialogSoyEstudiante">
         <v-icon>mdi-account</v-icon>
@@ -61,57 +52,7 @@
       hide-overlay
       transition="dialog-top-transition"
     >
-      <v-card>
-
-        <!-- AQUI EMPIEZA LA BARRA DE HASTA ARRIBA SECCION MENU-->
-        <v-toolbar
-          dark
-          color="primary"
-        >
-          <v-toolbar-title>Settings</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-toolbar-items>
-            <v-btn
-            icon
-            dark
-            @click="dialog_menu = false"
-          >
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-          </v-toolbar-items>
-        </v-toolbar>
-        <v-container>
-        <v-list>
-          <v-list-item>
-            <router-link to="/quienes-somos">
-              <v-btn @click="fnCerrarDialog">¿Quiénes somos?</v-btn>
-            </router-link>
-          </v-list-item>
-          <v-list-item>
-            <router-link to="/mensaje-institucional">
-              <v-btn @click="fnCerrarDialog">Mensaje Institucional</v-btn>
-            </router-link>
-          </v-list-item>
-          <v-list-item>
-            <v-btn @click="redirectTo('noticias')">Noticias</v-btn>
-          </v-list-item>
-          <v-list-item>
-            <v-btn @click="redirectTo('transparencia')">Transparencia</v-btn>
-          </v-list-item>
-          <v-list-item>
-            <v-btn @click="redirectTo('utl-en-cifras')">UTL en Cifras</v-btn>
-          </v-list-item>
-          <v-list-item>
-            <v-btn @click="redirectTo('normativa')">Normativa</v-btn>
-          </v-list-item>
-          <v-list-item>
-            <v-btn @click="redirectTo('trabajar-en-utl')">¿Quieres trabajar en la UTL?</v-btn>
-          </v-list-item>
-        </v-list>
-      </v-container>
-
-
-      </v-card>
+ 
     </v-dialog>
 
     <!--Seccion Menu-->
@@ -122,174 +63,158 @@
       fullscreen
       hide-overlay
       transition="dialog-top-transition"
+      
     >
       <v-card>
         <!-- AQUI EMPIEZA LA BARRA DE HASTA ARRIBA SECCION SOY ESTUDIANTE-->
 
         <v-toolbar
           dark
-          color="primary"
+          color="#0C398C" 
         >
-
-          <v-toolbar-title>Logo Utl</v-toolbar-title>
+         <v-img src="@/assets/Logo_UTL.png" max-height="40" max-width="40"></v-img>
           <v-spacer></v-spacer>
-          <v-toolbar-items>
-            <v-btn
-            icon
-            dark
-            @click="dialog_soy_estudiante = false"
-          >
-            <v-icon>mdi-close</v-icon>
+            
+            <v-btn icon dark @click="dialog_soy_estudiante = false">
+          <v-row align="center" justify="end">
+            <v-col class="d-flex align-center" style="margin-right: 30px;">
+              <span>Cerrar</span>
+              <v-icon color="green" class="circle-icon" style="margin-left: 5px;">
+                mdi-close
+              </v-icon>
+            </v-col>
+          </v-row>
           </v-btn>
-          </v-toolbar-items>
+        
         </v-toolbar>
         <v-row>
 <v-col md="3">
   <!--COLUMNA SUBMENU 1 -->
-  <v-card
-  color="#385F73"
-            dark>
-    <v-list>
-      <v-list-item>
-        <v-btn @click="fnMostrarMenu('sub_menu_soy_estudiante')">¿Soy Estudiante?</v-btn>
+
+    <v-list class="ma-0 pa-0 compact-list">
+      <v-list-item class="ma-0 pa-0 compact-list">
+        <v-btn style="font-size: 18px; height: 85px; width: 100%;" @click="fnMostrarMenu('sub_menu_soy_estudiante')">¿Soy Estudiante?</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="fnMostrarMenu('sub_menu_soy_docente')">¿Soy Docente?</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn  style="font-size: 18px; height: 85px; width: 100%;" @click="fnMostrarMenu('sub_menu_soy_docente')">¿Soy Docente?</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('noticias')">¿Soy Administrativo?</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 85px; width: 100%;" @click="redirectTo('noticias')">¿Soy Administrativo?</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('transparencia')">¿Soy Aspirante?</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 85px; width: 100%;" @click="redirectTo('transparencia')">¿Soy Aspirante?</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('utl-en-cifras')">¿Soy Egresado?</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 85px; width: 100%;" @click="redirectTo('utl-en-cifras')">¿Soy Egresado?</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('normativa')">¿Soy Empresario?</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 85px; width: 100%;" @click="redirectTo('normativa')">¿Soy Empresario?</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('trabajar-en-utl')">¿Somos Utl?</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 85px; width: 100%;" @click="redirectTo('trabajar-en-utl')">¿Somos Utl?</v-btn>
       </v-list-item>
     </v-list>
-  </v-card>
 </v-col>
 <v-col md="3">
     <!--COLUMNA SUBMENU 2 -->
-  <v-card
-  color="#385F73"
-            dark
-            >
+
             <!--SECCION SOY ESTUDIANTE-->
-    <v-list v-if="sub_menu_soy_estudiante">
-      <v-list-item>
-        <v-btn @click="fnMostrarMenu('sub_menu_soy_estudiante_tramites')">Trámites</v-btn>
+    <v-list v-if="sub_menu_soy_estudiante" v-list class="ma-0 pa-0">
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="fnMostrarMenu('sub_menu_soy_estudiante_tramites')">Trámites</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('mensaje-institucional')">Servicios</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('mensaje-institucional')">Servicios</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('noticias')">Organos</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('noticias')">Organos</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('transparencia')">Normativa Estudiantil</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('transparencia')">Normativa Estudiantil</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('utl-en-cifras')">Quejas</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('utl-en-cifras')">Quejas</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('normativa')">Contacto</v-btn>
+      <v-list-item class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('normativa')">Contacto</v-btn>
       </v-list-item>
     </v-list>
-
+ 
     <!--SECCION SOY DOCENTE-->
-    <v-list v-if="sub_menu_soy_docente">
-      <v-list-item>
-        <v-btn @click="redirectTo('quienes-somos')">Recursos para la gestión</v-btn>
+
+    <v-list v-if="sub_menu_soy_docente" v-list class="ma-0 pa-0">
+      <v-list-item v-list class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('quienes-somos')">Recursos para la gestión</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('mensaje-institucional')">Normativa</v-btn>
+      <v-list-item v-list class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('mensaje-institucional')">Normativa</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('noticias')">Desarrollo Académico</v-btn>
+      <v-list-item v-list class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('noticias')">Desarrollo Académico</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('transparencia')">Investigación UTL</v-btn>
+      <v-list-item v-list class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('transparencia')">Investigación UTL</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('utl-en-cifras')">Salud Integral</v-btn>
+      <v-list-item v-list class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('utl-en-cifras')">Salud Integral</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('normativa')">Órganos Colegiados</v-btn>
+      <v-list-item v-list class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('normativa')">Órganos Colegiados</v-btn>
       </v-list-item>
-      <v-list-item>
-        <v-btn @click="redirectTo('normativa')">Contactanos</v-btn>
+      <v-list-item v-list class="ma-0 pa-0">
+        <v-btn style="font-size: 18px; height: 80px; width: 100%;" @click="redirectTo('normativa')">Contactanos</v-btn>
       </v-list-item>
 
     </v-list>
-  </v-card>
 </v-col>
 
 <v-col md="3">
   <!--COLUMNA SUBMENU 3 -->
-<v-card
-color="#385F73"
-          dark
-          >
           <!--SECCION SOY ESTUDIANTE / TRAMITES-->
-  <v-list v-if="sub_menu_soy_estudiante_tramites">
-    <v-list-item>
-      <v-btn @click="redirectTo('quienes-somos')">Solicitud de Constancias</v-btn>
+  <v-list v-if="sub_menu_soy_estudiante_tramites" v-list class="ma-0 pa-0">
+    <v-list-item class="ma-0 pa-0">
+      <v-btn  style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('quienes-somos')">Solicitud de Constancias</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="redirectTo('mensaje-institucional')">Trámite de Credencial</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('mensaje-institucional')">Trámite de Credencial</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="redirectTo('noticias')">Trámite Estudiantil IMSS</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('noticias')">Trámite Estudiantil IMSS</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="redirectTo('transparencia')">Becas</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('transparencia')">Becas</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="redirectTo('utl-en-cifras')">Pago de Examen de Regularización</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 17px; height: 70px; width: 100%;" @click="redirectTo('utl-en-cifras')">Pago de Examen de Regularización</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="redirectTo('normativa')">Reinscripción</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('normativa')">Reinscripción</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="redirectTo('normativa')">Reingreso</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('normativa')">Reingreso</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="fnMostrarMenu('sub_menu_soy_estudiante_tramites_bajas')">Trámite de Baja</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="fnMostrarMenu('sub_menu_soy_estudiante_tramites_bajas')">Trámite de Baja</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="redirectTo('normativa')">Titulación</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('normativa')">Titulación</v-btn>
     </v-list-item>
   </v-list>
-
-
-</v-card>
 </v-col>
 
 <v-col md="3">
   <!--COLUMNA SUBMENU 4 -->
-<v-card
-color="#385F73"
-          dark
-          >
+
           <!--SECCION SOY ESTUDIANTE / TRAMITES / BAJAS -->
-  <v-list v-if="sub_menu_soy_estudiante_tramites_bajas">
-    <v-list-item>
-      <v-btn @click="redirectTo('quienes-somos')">Baja Temporal</v-btn>
+  <v-list v-if="sub_menu_soy_estudiante_tramites_bajas" class="ma-0 pa-0">
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('quienes-somos')">Baja Temporal</v-btn>
     </v-list-item>
-    <v-list-item>
-      <v-btn @click="redirectTo('mensaje-institucional')">Baja Definitiva</v-btn>
+    <v-list-item class="ma-0 pa-0">
+      <v-btn style="font-size: 18px; height: 70px; width: 100%;" @click="redirectTo('mensaje-institucional')">Baja Definitiva</v-btn>
     </v-list-item>
    
   </v-list>
-
-
-</v-card>
 </v-col>
         </v-row>
 
