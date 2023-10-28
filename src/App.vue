@@ -802,6 +802,7 @@
                color="#00FF0000"
              >
                <v-list-item class="ma-0 pa-0">
+                <router-link to="solicitud-constancias" style="text-decoration: none; color: inherit;">
                  <v-btn
                    dark
                    flat
@@ -820,10 +821,11 @@
                      line-height: 1.5;
                      font-weight: bold;
                    "
-                   @click="redirectTo('quienes-somos')"
+                   @click=fnCerrarDialog
                  >
                    Solicitud de Constancias
                  </v-btn>
+                </router-link>
                </v-list-item>
                <v-list-item class="ma-0 pa-0">
                  <v-btn
@@ -1134,34 +1136,37 @@
             </v-btn>
             </router-link>
            
-
-            <v-btn
+            <router-link to="transparencia-utl">
+              <v-btn
               color="#00FF0000"
               class="white--text transparent-button ml-7"
-              @click="redirectTo('sitio')"
+              @click=fnCerrarDialog
               elevation="0"
               style="
                 border: none;
                 font-family: 'Roboto Flex', sans-serif;
                 font-weight: bold;
               "
-            >
+              >
               Transparencia
-            </v-btn>
-
+              </v-btn>
+            </router-link>
+            <router-link to="utl-cifras">
             <v-btn
               color="#00FF0000"
               class="white--text transparent-button ml-7"
-              @click="redirectTo('biblioteca-digital')"
+              @click=fnCerrarDialog
               elevation="0"
               style="
                 border: none;
                 font-family: 'Roboto Flex', sans-serif;
                 font-weight: bold;
               "
+
             >
               UTL en cifras
             </v-btn>
+          </router-link>
 
             <v-btn
               color="#00FF0000"

@@ -7,6 +7,7 @@
             <br>
             <br>
             <br>
+            <p class="text-h4 font-weight-bold" style="font-family: 'Roboto', sans-serif; color:#00B394">Mensaje de Nuestra Rectora</p>
                 <p style="text-align: justify; font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 16px;">
                   Es un gusto muy especial dirigirme a todas y todos los integrantes de la Comunidad UTL: estudiantado, personal docente y administrativo, y demás plantilla actoral de nuestro entorno universitario.
     
