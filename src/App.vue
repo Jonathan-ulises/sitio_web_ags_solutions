@@ -3,28 +3,97 @@
 
    
     <!--#Sección MENU SUPERIOR-->
-    <v-app-bar class="elevation-4 fixed" app color="transparent" dark height="100px">
+    <v-app-bar class="elevation-0"
+    app
+    color="transparent"
+    dark
+    height="100px"
+    hide-on-scroll
+    style="position: fixed;"
+>
       <div class="d-flex align-center">
         <router-link to="/">
           <v-img
             alt="UTL Logo"
             class="shrink mr-3 mt-4"
             contain
-            src="@/assets/Logo_UTL.png"
+            src="@/assets/LogoUTL_Blanco.png"
             transition="scale-transition"
             width="80"
           />
         </router-link>
+
+        <v-btn
+        id="mi-boton"
+        plain
+        dark
+        flat
+        class="ml-7 btnmenu"
+        href="https://aulavirtual.seg.guanajuato.gob.mx/materias/login/index.php"
+        target="_blank"
+        elevation="0"
+      >
+        Aula Virtual
+      </v-btn>
+      <v-btn
+      id="mi-boton"
+      plain
+      dark
+      flat
+      class="ml-7 btnmenu"
+      href="https://www.microsoft.com/es-mx/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook"
+      target="_blank"
+      elevation="0"
+    >
+      Correo Electrónico
+    </v-btn>
+
+    <v-btn
+    id="mi-boton"
+    plain
+    dark
+    flat
+    class="ml-7 btnmenu"
+    href="https://sito.utleon.edu.mx/"
+    target="_blank"
+    elevation="0"
+  >
+    SITO
+  </v-btn>
+  <v-btn
+  id="mi-boton"
+  plain
+  dark
+  flat
+  class="ml-7 btnmenu"
+  href="http://www.bibliotecaecest.mx/"
+  target="_blank"
+  elevation="0"
+>
+  Biblioteca Digital
+</v-btn>
+      <v-btn
+        id="mi-boton"
+        plain
+        dark
+        flat
+        class="ml-7 btnmenu"
+        href="https://www.utleon.edu.mx/resource/img/CALENDARIO%20LE%C3%93N.jpg"
+        target="_blank"
+        elevation="0"
+      >
+        Calendario Escolar
+      </v-btn>
 
       </div>
 
       <v-spacer></v-spacer>
 
       <!-- Botón de Soy Estudiante -->
-      <v-btn text class="black--text"  @click="openDialogSoyEstudiante">
-        <v-icon>mdi-account</v-icon>
+      <v-btn text class="white--text"  @click="openDialogSoyEstudiante">
+        <v-icon>mdi-menu</v-icon>
         
-        Soy Estudiante
+      Menú
       </v-btn>
     </v-app-bar>
     <v-main>
@@ -35,7 +104,7 @@
       <router-view />
     </v-main>
     <v-row justify="center">
-      <v-dialog
+      <v-dialog 
         v-model="dialog_menu"
         fullscreen
         hide-overlay
@@ -44,9 +113,9 @@
       </v-dialog>
 
       <!--Seccion Menu-->
-    </v-row>
+    </v-row >
     <v-row justify="center">
-      <v-dialog
+      <v-dialog 
         v-model="dialog_soy_estudiante"
         fullscreen
         hide-overlay
@@ -54,108 +123,95 @@
       >
       <!--IMAGENES DE FONDO-->
         <v-card color="#00FF0000">
-
           <v-img
-          :src="dialog_soy_estudiante == true && sub_menu_soy_estudiante == true ? require('@/assets/fondos/fondo_estudiante.jpeg') : (dialog_soy_estudiante == true && sub_menu_soy_aspirante == true ? require('@/assets/fondos/fondo_aspirante.jpeg') : require('@/assets/fondos/fondo_defecto.jpeg'))"
+          :src="dialog_soy_estudiante == true && sub_menu_soy_estudiante_tramites == true ? require('@/assets/fondos/SoyEstudiante.png') :
+          dialog_soy_estudiante == true && sub_menu_soy_aspirante_oferta_educativa == true ? require('@/assets/fondos/SoyEstudiante.png') :
+          dialog_soy_estudiante == true && sub_menu_soy_aspirante == true ? require('@/assets/fondos/fondo_aspirante.png') :
+          dialog_soy_estudiante == true && sub_menu_soy_estudiante == true ? require('@/assets/fondos/oferta.png') :
+          dialog_soy_estudiante == true && sub_menu_soy_docente == true ? require('@/assets/fondos/fondo_tramites.png') :
+          require('@/assets/fondos/FondoMenuPrincipal.png')"
           
-          style="height:750px"
+          
+          style="height:720px;"
         >
-
           <!-- AQUI EMPIEZA LA BARRA DE HASTA ARRIBA SECCION SOY ESTUDIANTE-->
-
+          
           <template>
-            <v-toolbar dark color="#00FF0000">
+            <v-toolbar dark color="#00FF0000" class="elevation-0">
               <v-row align="center" class="d-flex">
                 <v-img
-                  src="@/assets/Logo_UTL.png"
+                  src="@/assets/LogoUTL_Blanco.png"
                   max-height="60"
                   max-width="60"
                   class="mr-6"
                 ></v-img>
                 <v-btn
-                  color="#00FF0000"
-                  class="white-text transparent-button"
-                  href="https://aulavirtual.seg.guanajuato.gob.mx/materias/login/index.php"
-                  target="_blank"
-                  elevation="0"
-                  style="
-                    border: none;
-                    font-family: 'Roboto Flex', sans-serif;
-                    font-weight: bold;
-                  "
-                >
-                  Aula Virtual
-                </v-btn>
+        id="mi-boton"
+        plain
+        dark
+        flat
+        class="ml-7 btnmenu"
+        href="https://aulavirtual.seg.guanajuato.gob.mx/materias/login/index.php"
+        target="_blank"
+        elevation="0"
+      >
+        Aula Virtual
+      </v-btn>
                 <v-btn
-                  color="#00FF0000"
-                  class="white-text transparent-button"
-                  href="https://www.utleon.edu.mx/resource/img/CALENDARIO%20LE%C3%93N__.jpg"
-                  target="_blank"
-                  elevation="0"
-                  style="
-                    border: none;
-                    font-family: 'Roboto Flex', sans-serif;
-                    font-weight: bold;
-                  "
-                >
-                  Calendario Escolar
-                </v-btn>
+                id="mi-boton"
+                plain
+                dark
+                flat
+                class="ml-7 btnmenu"
+                href="https://www.utleon.edu.mx/resource/img/CALENDARIO%20LE%C3%93N.jpg"
+                target="_blank"
+                elevation="0"
+              >
+                Calendario Escolar
+              </v-btn>
 
-                <v-btn
-                  color="#00FF0000"
-                  class="white-text transparent-button"
-                  elevation="0"
-                  style="
-                    border: none;
-                    font-family: 'Roboto Flex', sans-serif;
-                    font-weight: bold;
-                  "
-                  href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=16&ct=1697739439&rver=7.0.6738.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26cobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26RpsCsrfState%3dd9cb0b76-b115-cfb0-0a2c-26012db8721d&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Correo Electrónico
-                </v-btn>
+              <v-btn
+              id="mi-boton"
+              plain
+              dark
+              flat
+              class="ml-7 btnmenu"
+              href="https://www.microsoft.com/es-mx/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook"
+              target="_blank"
+              elevation="0"
+            >
+              Correo Electrónico
+            </v-btn>
 
-                <v-btn
-                  color="#00FF0000"
-                  class="transparent-button"
-                  elevation="0"
-                  style="
-                    border: none;
-                    font-family: 'Roboto Flex', sans-serif;
-                    font-weight: bold;
-                  "
-                >
-                  <a
-                    href="https://sito.utleon.edu.mx/"
-                    class="white-text"
-                    style="text-decoration: none; color: white"
-                  >
-                    SITO
-                  </a>
-                </v-btn>
+            <v-btn
+            id="mi-boton"
+            plain
+            dark
+            flat
+            class="ml-7 btnmenu"
+            href="https://sito.utleon.edu.mx/"
+            target="_blank"
+            elevation="0"
+          >
+          SITO
+          </v-btn>
 
-                <v-btn
-                  color="#00FF0000"
-                  class="white-text transparent-button"
-                  elevation="0"
-                  style="
-                    border: none;
-                    font-family: 'Roboto Flex', sans-serif;
-                    font-weight: bold;
-                  "
-                  @click="redirectTo('biblioteca-digital')"
-                  href="https://sibisut.utleon.edu.mx/Descargar/Bidig2020.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Biblioteca Digital
-                </v-btn>
+          <v-btn
+          id="mi-boton"
+          plain
+          dark
+          flat
+          class="ml-7 btnmenu"
+          href="http://www.bibliotecaecest.mx/"
+          target="_blank"
+          elevation="0"
+        >
+          Biblioteca Digital
+        </v-btn>
 
                 <v-spacer></v-spacer>
 
-                <v-btn icon dark @click="dialog_soy_estudiante = false">
+                <v-btn icon dark @click="fnLimpiar">
                   <v-row align="center">
                     <v-col
                       class="d-flex align-center"
@@ -181,9 +237,13 @@
               <v-list color="#00FF0000" class="ma-0 pa-0 compact-list">
                 <v-list-item class="ma-0 pa-0 compact-list text-center">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -205,9 +265,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0 compact-list text-center">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -229,9 +293,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0 compact-list text-center">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -253,9 +321,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0 compact-list text-center">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -278,9 +350,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0 compact-list text-center">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -302,9 +378,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0 compact-list text-center">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -326,9 +406,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0 compact-list text-center">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -362,9 +446,13 @@
               >
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -386,9 +474,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -410,9 +502,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -434,9 +530,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -458,9 +558,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -482,9 +586,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -515,9 +623,13 @@
               >
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -539,9 +651,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -563,9 +679,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -587,9 +707,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -611,9 +735,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -635,9 +763,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -659,9 +791,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -692,9 +828,13 @@
               >
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -716,9 +856,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -733,16 +877,22 @@
                       line-height: 1.5;
                       font-weight: bold;
                     "
-                    @click="redirectTo('mensaje-institucional')"
+                    @click="
+                    fnMostrarMenu('sub_menu_soy_aspirante_oferta_educativa')
+                  "
                   >
                     Oferta Educativa
                   </v-btn>
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -764,9 +914,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -793,20 +947,235 @@
 
             <v-col md="3">
 
+             <!--SECCION SOY ESTUDIANTE / TRAMITES-->
+             <v-list
+             v-if="sub_menu_soy_estudiante_tramites"
+             class="ma-0 pa-0"
+             color="#00FF0000"
+           >
+             <v-list-item class="ma-0 pa-0">
+              <router-link to="solicitud-constancias" style="text-decoration: none; color: inherit;">
+               <v-btn
+               id="mi-boton"
+               plain
+               dark
+               flat
+               class="ml-7 btnmenu"
+               target="_blank"
+               elevation="0"
+                 style="
+                   all: initial;
+                   font-size: 20px;
+                   height: 50px;
+                   width: 100%;
+                   text-align: left;
+                   color: white;
+                   padding-left: 10px;
+                   padding-right: 10px;
+                   font-family: 'Roboto Flex', sans-serif;
+                   letter-spacing: 2px;
+                   line-height: 1.5;
+                   font-weight: bold;
+                 "
+                 @click=fnCerrarDialog
+               >
+                 Solicitud de Constancias
+               </v-btn>
+              </router-link>
+             </v-list-item>
+             <v-list-item class="ma-0 pa-0">
+               <v-btn
+               id="mi-boton"
+               plain
+               dark
+               flat
+               class="ml-7 btnmenu"
+               target="_blank"
+               elevation="0"
+                 style="
+                   all: initial;
+                   font-size: 20px;
+                   height: 50px;
+                   width: 100%;
+                   text-align: left;
+                   color: white;
+                   padding-left: 10px;
+                   padding-right: 10px;
+                   font-family: 'Roboto Flex', sans-serif;
+                   letter-spacing: 2px;
+                   line-height: 1.5;
+                   font-weight: bold;
+                 "
+                 @click="redirectTo('mensaje-institucional')"
+               >
+                 Trámite de Credencial
+               </v-btn>
+             </v-list-item>
+             <v-list-item class="ma-0 pa-0">
+               <v-btn
+               id="mi-boton"
+               plain
+               dark
+               flat
+               class="ml-7 btnmenu"
+               target="_blank"
+               elevation="0"
+                 style="
+                   all: initial;
+                   font-size: 20px;
+                   height: 50px;
+                   width: 100%;
+                   text-align: left;
+                   color: white;
+                   padding-left: 10px;
+                   padding-right: 10px;
+                   font-family: 'Roboto Flex', sans-serif;
+                   letter-spacing: 2px;
+                   line-height: 1.5;
+                   font-weight: bold;
+                 "
+                 @click="redirectTo('mensaje-institucional')"
+               >
+                 Trámite estudiantil IMSS
+               </v-btn>
+             </v-list-item>
+             <v-list-item class="ma-0 pa-0">
+               <v-btn
+               id="mi-boton"
+               plain
+               dark
+               flat
+               class="ml-7 btnmenu"
+               target="_blank"
+               elevation="0"
+                 style="
+                   all: initial;
+                   font-size: 20px;
+                   height: 50px;
+                   width: 100%;
+                   text-align: left;
+                   color: white;
+                   padding-left: 10px;
+                   padding-right: 10px;
+                   font-family: 'Roboto Flex', sans-serif;
+                   letter-spacing: 2px;
+                   line-height: 1.5;
+                   font-weight: bold;
+                 "
+                 @click="redirectTo('mensaje-institucional')"
+               >
+                 Becas
+               </v-btn>
+             </v-list-item>
+             <v-list-item class="ma-0 pa-0">
+               <v-btn
+               id="mi-boton"
+               plain
+               dark
+               flat
+               class="ml-7 btnmenu"
+               target="_blank"
+               elevation="0"
+                 style="
+                   all: initial;
+                   font-size: 20px;
+                   height: 50px;
+                   width: 100%;
+                   text-align: left;
+                   color: white;
+                   padding-left: 10px;
+                   padding-right: 10px;
+                   font-family: 'Roboto Flex', sans-serif;
+                   letter-spacing: 2px;
+                   line-height: 1.5;
+                   font-weight: bold;
+                 "
+                 @click="redirectTo('mensaje-institucional')"
+               >
+            Pago de examen de regularización
+
+            </v-btn>
+             </v-list-item>
+             <v-list-item class="ma-0 pa-0">
+               <v-btn
+               id="mi-boton"
+               plain
+               dark
+               flat
+               class="ml-7 btnmenu"
+               target="_blank"
+               elevation="0"
+                 style="
+                   all: initial;
+                   font-size: 20px;
+                   height: 50px;
+                   width: 100%;
+                   text-align: left;
+                   color: white;
+                   padding-left: 10px;
+                   padding-right: 10px;
+                   font-family: 'Roboto Flex', sans-serif;
+                   letter-spacing: 2px;
+                   line-height: 1.5;
+                   font-weight: bold;
+                 "
+                 @click="redirectTo('mensaje-institucional')"
+               >
+            Reinscripción
+
+            </v-btn>
+             </v-list-item>
+             <v-list-item class="ma-0 pa-0">
+               <v-btn
+               id="mi-boton"
+               plain
+               dark
+               flat
+               class="ml-7 btnmenu"
+               target="_blank"
+               elevation="0"
+                 style="
+                   all: initial;
+                   font-size: 20px;
+                   height: 50px;
+                   width: 100%;
+                   text-align: left;
+                   color: white;
+                   padding-left: 10px;
+                   padding-right: 10px;
+                   font-family: 'Roboto Flex', sans-serif;
+                   letter-spacing: 2px;
+                   line-height: 1.5;
+                   font-weight: bold;
+                 "
+                 @click="redirectTo('mensaje-institucional')"
+               >
+            Reingreso
+
+            </v-btn>
+             </v-list-item>
+             
             
+             
+           </v-list>
+
 
                <!--SECCION SOY ASPIRANTE / OFERTA EDUCATIVA-->
                <v-list
-               v-if="sub_menu_soy_estudiante_tramites"
+               v-if="sub_menu_soy_aspirante_oferta_educativa"
                class="ma-0 pa-0"
                color="#00FF0000"
              >
                <v-list-item class="ma-0 pa-0">
-                <router-link to="solicitud-constancias" style="text-decoration: none; color: inherit;">
+                <router-link to="/carreras-tsu" style="text-decoration: none; color: inherit;">
                  <v-btn
-                   dark
-                   flat
-                   text
+                 id="mi-boton"
+                 plain
+                 dark
+                 flat
+                 class="ml-7 btnmenu"
+                 target="_blank"
+                 elevation="0"
                    style="
                      all: initial;
                      font-size: 20px;
@@ -821,17 +1190,22 @@
                      line-height: 1.5;
                      font-weight: bold;
                    "
-                   @click=fnCerrarDialog
+                   @click=fnLimpiar
                  >
-                   Solicitud de Constancias
+                   Carreras TSU
                  </v-btn>
                 </router-link>
                </v-list-item>
                <v-list-item class="ma-0 pa-0">
+                <router-link to="/carreras-ing" style="text-decoration: none; color: inherit;">
                  <v-btn
-                   dark
-                   flat
-                   text
+                 id="mi-boton"
+                 plain
+                 dark
+                 flat
+                 class="ml-7 btnmenu"
+                 target="_blank"
+                 elevation="0"
                    style="
                      all: initial;
                      font-size: 20px;
@@ -846,181 +1220,16 @@
                      line-height: 1.5;
                      font-weight: bold;
                    "
-                   @click="redirectTo('mensaje-institucional')"
+                   @click=fnLimpiar
                  >
-                   Trámite de Credencial
+                   Carreras Licenciatura
                  </v-btn>
+                </router-link>
                </v-list-item>
-               <v-list-item class="ma-0 pa-0">
-                 <v-btn
-                   dark
-                   flat
-                   text
-                   style="
-                     all: initial;
-                     font-size: 20px;
-                     height: 50px;
-                     width: 100%;
-                     text-align: left;
-                     color: white;
-                     padding-left: 10px;
-                     padding-right: 10px;
-                     font-family: 'Roboto Flex', sans-serif;
-                     letter-spacing: 2px;
-                     line-height: 1.5;
-                     font-weight: bold;
-                   "
-                   @click="redirectTo('noticias')"
-                 >
-                   Trámite Estudiantil IMSS
-                 </v-btn>
-               </v-list-item>
-               <v-list-item class="ma-0 pa-0">
-                 <v-btn
-                   dark
-                   flat
-                   text
-                   style="
-                     all: initial;
-                     font-size: 20px;
-                     height: 40px;
-                     width: 100%;
-                     text-align: left;
-                     color: white;
-                     padding-left: 10px;
-                     padding-right: 10px;
-                     font-family: 'Roboto Flex', sans-serif;
-                     letter-spacing: 2px;
-                     line-height: 1.5;
-                     font-weight: bold;
-                   "
-                   @click="redirectTo('transparencia')"
-                 >
-                   Becas
-                 </v-btn>
-               </v-list-item>
-               <v-list-item class="ma-0 pa-0">
-                 <v-btn
-                   dark
-                   flat
-                   text
-                   style="
-                     all: initial;
-                     font-size: 20px;
-                     height: 50px;
-                     width: 100%;
-                     text-align: left;
-                     color: white;
-                     padding-left: 10px;
-                     padding-right: 10px;
-                     font-family: 'Roboto Flex', sans-serif;
-                     letter-spacing: 2px;
-                     line-height: 1.5;
-                     font-weight: bold;
-                   "
-                   @click="redirectTo('utl-en-cifras')"
-                 >
-                   Pago de Examen de Regularización
-                 </v-btn>
-               </v-list-item>
-               <v-list-item class="ma-0 pa-0">
-                 <v-btn
-                   dark
-                   flat
-                   text
-                   style="
-                     all: initial;
-                     font-size: 20px;
-                     height: 50px;
-                     width: 100%;
-                     text-align: left;
-                     color: white;
-                     padding-left: 10px;
-                     padding-right: 10px;
-                     font-family: 'Roboto Flex', sans-serif;
-                     letter-spacing: 2px;
-                     line-height: 1.5;
-                     font-weight: bold;
-                   "
-                   @click="redirectTo('normativa')"
-                 >
-                   Reinscripción
-                 </v-btn>
-               </v-list-item>
-               <v-list-item class="ma-0 pa-0">
-                 <v-btn
-                   dark
-                   flat
-                   text
-                   style="
-                     all: initial;
-                     font-size: 20px;
-                     height: 70px;
-                     width: 100%;
-                     text-align: left;
-                     color: white;
-                     padding-left: 10px;
-                     padding-right: 10px;
-                     font-family: 'Roboto Flex', sans-serif;
-                     letter-spacing: 2px;
-                     line-height: 1.5;
-                     font-weight: bold;
-                   "
-                   @click="redirectTo('normativa')"
-                 >
-                   Reingreso
-                 </v-btn>
-               </v-list-item>
-               <v-list-item class="ma-0 pa-0">
-                 <v-btn
-                   dark
-                   flat
-                   text
-                   style="
-                     all: initial;
-                     font-size: 20px;
-                     height: 70px;
-                     width: 100%;
-                     text-align: left;
-                     color: white;
-                     padding-left: 10px;
-                     padding-right: 10px;
-                     font-family: 'Roboto Flex', sans-serif;
-                     letter-spacing: 2px;
-                     line-height: 1.5;
-                     font-weight: bold;
-                   "
-                   @click="
-                     fnMostrarMenu('sub_menu_soy_estudiante_tramites_bajas')
-                   "
-                 >
-                   Trámite de Baja
-                 </v-btn>
-               </v-list-item>
-               <v-list-item class="ma-0 pa-0">
-                 <v-btn
-                   dark
-                   flat
-                   text
-                   style="
-                     all: initial;
-                     font-size: 20px;
-                     height: 70px;
-                     width: 100%;
-                     text-align: left;
-                     color: white;
-                     padding-left: 10px;
-                     padding-right: 10px;
-                     font-family: 'Roboto Flex', sans-serif;
-                     letter-spacing: 2px;
-                     line-height: 1.5;
-                     font-weight: bold;
-                   "
-                   @click="redirectTo('normativa')"
-                 >
-                   Titulación
-                 </v-btn>
-               </v-list-item>
+              
+               
+              
+               
              </v-list>
             </v-col>
 
@@ -1035,9 +1244,13 @@
               >
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flatnt-s
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -1059,9 +1272,13 @@
                 </v-list-item>
                 <v-list-item class="ma-0 pa-0">
                   <v-btn
-                    dark
-                    flat
-                    text
+                  id="mi-boton"
+                  plain
+                  dark
+                  flat
+                  class="ml-7 btnmenu"
+                  target="_blank"
+                  elevation="0"
                     style="
                       all: initial;
                       font-size: 24px;
@@ -1093,6 +1310,7 @@
                 class="white--text transparent-button ml-7"
                 @click="fnCerrarDialog"
                 elevation="0"
+                
                 style="
                   border: none;
                   font-family: 'Roboto Flex', sans-serif;
@@ -1103,11 +1321,11 @@
               </v-btn>
             </router-link>
 
-            <router-link to="/mensaje-institucional">
+            <router-link to="/">
               <v-btn
               color="#00FF0000"
               class="white--text transparent-button ml-7"
-              @click="redirectTo('calendario-escolar')"
+              @click="fnMostrarMensajeInstitucional"
               elevation="0"
               style="
                 border: none;
@@ -1117,8 +1335,7 @@
             >
               Mensaje Institucional
             </v-btn>
-            </router-link>
-       
+       </router-link>
 
             <router-link>
               <v-btn
@@ -1228,12 +1445,33 @@ export default {
     sub_menu_soy_estudiante_tramites: false,
     sub_menu_soy_estudiante_tramites_bajas: false,
     sub_menu_soy_aspirante: false,
+    sub_menu_soy_aspirante_oferta_educativa: false
  
 
     //
   }),
   methods: {
-    fnLimpiar() {},
+    fnMostrarMensajeInstitucional() {
+      this.dialog_soy_estudiante = false;
+      window.scrollTo(0, document.body.scrollHeight * 0.3);
+    },
+    fnLimpiar() {
+    this.sub_menu_soy_estudiante= false;
+    this.sub_menu_soy_docente= false;
+    this.sub_menu_soy_estudiante_tramites= false;
+    this.sub_menu_soy_estudiante_tramites_bajas= false;
+    this.sub_menu_soy_aspirante= false;
+    this.dialog_soy_estudiante = false;
+    this.sub_menu_soy_aspirante_oferta_educativa = false;
+    },
+    fnLimpiarVariables() {
+    this.sub_menu_soy_estudiante= false;
+    this.sub_menu_soy_docente= false;
+    this.sub_menu_soy_estudiante_tramites= false;
+    this.sub_menu_soy_estudiante_tramites_bajas= false;
+    this.sub_menu_soy_aspirante= false;
+    this.sub_menu_soy_aspirante_oferta_educativa = false;
+    },
     openDialogMenu() {
       this.dialog_menu = true;
     },
@@ -1258,10 +1496,12 @@ export default {
 
       //Submenu 2
       if (this.menu_encender == "sub_menu_soy_estudiante") {
-        this.sub_menu_soy_docente = false;
-        this.sub_menu_soy_estudiante_tramites = false;
-        this.sub_menu_soy_estudiante_tramites_bajas = false;
-        this.sub_menu_soy_aspirante = false;
+
+        this.sub_menu_soy_docente= false;
+    this.sub_menu_soy_estudiante_tramites= false;
+    this.sub_menu_soy_estudiante_tramites_bajas= false;
+    this.sub_menu_soy_aspirante= false;
+    this.sub_menu_soy_aspirante_oferta_educativa = false;
 
         if (this.sub_menu_soy_estudiante == true) {
           this.sub_menu_soy_estudiante = false;
@@ -1271,9 +1511,12 @@ export default {
         }
       }
       if (this.menu_encender == "sub_menu_soy_aspirante") {
-        this.sub_menu_soy_docente = false;
-        this.sub_menu_soy_estudiante_tramites = false;
-        this.sub_menu_soy_estudiante_tramites_bajas = false;
+        this.sub_menu_soy_estudiante= false;
+    this.sub_menu_soy_docente= false;
+    this.sub_menu_soy_estudiante_tramites= false;
+    this.sub_menu_soy_estudiante_tramites_bajas= false;
+    this.sub_menu_soy_aspirante_oferta_educativa = false;
+
         
 
         if (this.sub_menu_soy_aspirante == true) {
@@ -1284,9 +1527,12 @@ export default {
       }
 
       if (this.menu_encender == "sub_menu_soy_docente") {
-        this.sub_menu_soy_estudiante = false;
-        this.sub_menu_soy_estudiante_tramites = false;
-        this.sub_menu_soy_aspirante = false;
+        this.sub_menu_soy_estudiante= false;
+    this.sub_menu_soy_estudiante_tramites= false;
+    this.sub_menu_soy_estudiante_tramites_bajas= false;
+    this.sub_menu_soy_aspirante= false;
+    this.sub_menu_soy_aspirante_oferta_educativa = false;
+
 
 
         if (this.sub_menu_soy_docente == true) {
@@ -1299,10 +1545,13 @@ export default {
       // Submenu 3
 
       if (this.menu_encender == "sub_menu_soy_estudiante_tramites") {
+       
+
         if (this.sub_menu_soy_estudiante_tramites == true) {
           this.sub_menu_soy_estudiante_tramites = false;
         } else {
           this.sub_menu_soy_estudiante_tramites = true;
+          
         }
       }
 
@@ -1313,6 +1562,15 @@ export default {
           this.sub_menu_soy_estudiante_tramites_bajas = false;
         } else {
           this.sub_menu_soy_estudiante_tramites_bajas = true;
+        }
+      }
+
+
+      if (this.menu_encender == "sub_menu_soy_aspirante_oferta_educativa") {
+        if (this.sub_menu_soy_aspirante_oferta_educativa == true) {
+          this.sub_menu_soy_aspirante_oferta_educativa = false;
+        } else {
+          this.sub_menu_soy_aspirante_oferta_educativa = true;
         }
       }
       
@@ -1339,4 +1597,29 @@ export default {
   line-height: 1.5;
   font-weight: bold;
 }
+.btnmenu {
+  color: white !important; /* Establece el color del texto como blanco y utiliza !important para asegurar prioridad */
+  text-decoration: none; /* Elimina cualquier decoración de texto predeterminada */
+  background-color: transparent; /* Establece el fondo como transparente */
+  border: none; /* Elimina el borde del botón */
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btnmenu:after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  transition: width 0.3s ease 0s;
+}
+
+.btnmenu:hover:after {
+  width: 100%;
+}
+
 </style>
