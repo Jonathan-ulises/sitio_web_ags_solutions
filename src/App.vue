@@ -1165,7 +1165,7 @@
                color="#00FF0000"
              >
                <v-list-item class="ma-0 pa-0">
-                <router-link to="/carreras-tsu" style="text-decoration: none; color: inherit;">
+                <router-link to="carreras-tsu" style="text-decoration: none; color: inherit;">
                  <v-btn
                  id="mi-boton"
                  plain
@@ -1188,7 +1188,7 @@
                      line-height: 1.5;
                      font-weight: bold;
                    "
-                   @click=fnLimpiar
+                   @click="fnLimpiar"
                  >
                    Carreras TSU
                  </v-btn>
@@ -1218,7 +1218,7 @@
                      line-height: 1.5;
                      font-weight: bold;
                    "
-                   @click=fnLimpiar
+                   @click="fnLimpiar"
                  >
                    Carreras Licenciatura
                  </v-btn>
