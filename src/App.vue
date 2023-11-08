@@ -1,7 +1,6 @@
 <template>
   <v-app>
 
-   
     <!--#Sección MENU SUPERIOR-->
     <v-app-bar class="elevation-4 fixed" app color="transparent" dark height="100px">
       <div class="d-flex align-center">
