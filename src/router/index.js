@@ -60,6 +60,56 @@ const routes = [
       return import(/* webpackChunkName: "about" */ '../views/MensajeInstitucionalView.vue')
     }
   },
+  {
+    path: '/transparencia-utl',
+    name: 'transparencia-utl',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Transparencia.vue')
+    }
+  },
+  {
+    path: '/utl-cifras',
+    name: 'utl-cifras',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/UTLenCifras.vue')
+    }
+  },
+  {
+    path: '/carreras-tsu',
+    name: 'carreras-tsu',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/CarrerasTsu.vue')
+    }
+  },
+  {
+    path: '/carreras-ing',
+    name: 'carreras-ing',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/CarrerasING.vue')
+    }
+  },
+  {
+    path: '/solicitud-constancias',
+    name: 'solicitud-constancias',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/SolicitudConstancias.vue')
+    }
+  },
 ]
 
 const router = new VueRouter({

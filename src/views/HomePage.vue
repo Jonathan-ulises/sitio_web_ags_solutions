@@ -8,6 +8,8 @@
       transition="fade-transition"
     ></v-carousel-item>
     </v-carousel>
+
+    
       
 </template>
 
