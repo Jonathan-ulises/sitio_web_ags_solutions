@@ -1,6 +1,5 @@
 <template>
   <v-app>
-
     <!--#Sección MENU SUPERIOR-->
     <v-app-bar class="elevation-0"
     app
